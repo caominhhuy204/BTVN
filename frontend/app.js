@@ -1,5 +1,5 @@
-const API_AUTH = "http://localhost:8080/api/auth";
-const API_FILES = "http://localhost:8080/api/files";
+const API_AUTH = "http://localhost:8081/api/auth";
+const API_FILES = "http://localhost:8081/api/files";
 const TOKEN_KEY = "btvn.authToken";
 const USERNAME_KEY = "btvn.username";
 

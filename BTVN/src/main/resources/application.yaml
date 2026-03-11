@@ -1,12 +1,13 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: BTVN
-
   datasource:
-    url: jdbc:mysql://localhost:3306/filedb?useSSL=false&serverTimezone=Asia/Ho_Chi_Minh
+    url: "jdbc:mysql://localhost:3306/filedb?useSSL=false&serverTimezone=Asia/Ho_Chi_Minh"
     username: root
-    password: 123456
-
+    password: "123456"
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,7 +15,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
   servlet:
     multipart:
       max-file-size: 500MB
