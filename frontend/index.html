@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTVN File Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main class="app">
+  <section id="authSection" class="auth-shell">
+    <article class="auth-card">
+      <h1>Dang nhap he thong</h1>
+      <p>Dang ky tai khoan moi hoac dang nhap de quan ly file cua ban.</p>
+
+      <div class="auth-tabs">
+        <button id="showLoginBtn" type="button" class="is-active">Dang nhap</button>
+        <button id="showRegisterBtn" type="button">Dang ky</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <label for="loginUsername">Username</label>
+        <input id="loginUsername" type="text" autocomplete="username" required>
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" autocomplete="current-password" required>
+        <button id="loginBtn" type="submit">Dang nhap</button>
+      </form>
+
+      <form id="registerForm" class="auth-form hidden">
+        <label for="registerUsername">Username</label>
+        <input id="registerUsername" type="text" autocomplete="username" required>
+        <label for="registerPassword">Password</label>
+        <input id="registerPassword" type="password" autocomplete="new-password" required>
+        <button id="registerBtn" type="submit">Tao tai khoan</button>
+      </form>
+
+      <p id="authMessage" class="message"></p>
+    </article>
+  </section>
+
+  <section id="dashboardSection" class="hidden">
+    <section class="topbar">
+      <div>
+        <h1>Quan ly file ca nhan</h1>
+        <p id="currentUserText">Xin chao</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="refreshBtn" type="button">Lam moi danh sach</button>
+        <button id="logoutBtn" type="button" class="btn-danger">Dang xuat</button>
+      </div>
+    </section>
+
+    <section class="card upload-card">
+      <h2>Upload</h2>
+      <form id="uploadForm" class="upload-form">
+        <input id="fileInput" name="file" type="file" multiple required />
+        <button id="uploadBtn" type="submit">Upload file</button>
+      </form>
+      <p id="selectedFile" class="hint">Chua chon file</p>
+      <p id="uploadMessage" class="message"></p>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span class="stat-label">Tong file</span>
+        <strong id="totalFiles">0</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-label">Dang hien thi</span>
+        <strong id="shownFiles">0</strong>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="toolbar">
+        <h2>Danh sach file</h2>
+        <input id="searchInput" type="text" placeholder="Tim theo ten hoac loai file..." />
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Ten file</th>
+            <th>Loai</th>
+            <th>Kich thuoc</th>
+            <th>Upload luc</th>
+            <th>Thao tac</th>
+          </tr>
+          </thead>
+          <tbody id="fileTableBody">
+          <tr>
+            <td colspan="6" class="empty">Chua co du lieu</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+</main>
+
+<script src="./app.js"></script>
+</body>
+</html>

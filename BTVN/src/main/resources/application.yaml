@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: BTVN
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/filedb?useSSL=false&serverTimezone=Asia/Ho_Chi_Minh
+    username: root
+    password: 123456
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+file:
+  upload-dir: uploads
